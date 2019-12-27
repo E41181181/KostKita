@@ -1,7 +1,6 @@
 <?php            
 session_start();
 
-
 if(isset($_SESSION['level'])){
     if($_SESSION['level'] == "2"){
         include 'navbarLoginPemilik.php';
@@ -31,7 +30,7 @@ if(isset($_SESSION['level'])){
                                 <div class="mbr-hero">
                                     <h1 class="mbr-hero__text">Mau Cari Kost?</h1>
 
-                                    <p class="mbr-hero__subtext">Tapi binggung?<br><br></p>
+                                    <p class="mbr-hero__subtext">Tapi Binggung?<br><br></p>
                                 </div>
                                 <div class="mbr-buttons btn-inverse mbr-buttons--left mbr-buttons--right"><a class="mbr-buttons__btn btn btn-lg btn-danger" href="#">Cari Kost</a> </div>
                                 </div>
@@ -88,10 +87,8 @@ if(isset($_SESSION['level'])){
                                     <div>
                                 <span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>Cari</button>
                                 </div>   
-                            </form>
-                    
+                            </form>    
                 </div>
-
             </div>
         </div>
     </div>
