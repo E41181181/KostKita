@@ -1,7 +1,6 @@
 <?php            
 session_start();
 
-
 if(isset($_SESSION['level'])){
     if($_SESSION['level'] == "2"){
         include 'navbarLoginPemilik.php';
@@ -102,33 +101,15 @@ if(isset($_SESSION['level'])){
         </div>
     </div>
 </section>
-<!--BAGIAN PENCARIAN-->
 
 <section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="features1-8" data-rv-view="44" style="background-color: rgb(255, 255, 255);">            
     <div class="mbr-section__container container mbr-section__container--std-top-padding" style="padding-top: 93px;">
         <div class="mbr-section__row row">
+        <div class="row">
+            
+        <?php $ambil=$koneksi->query("SELECT * FROM tb_datakos INNER JOIN tb_tipekamar ON tb_datakos.ID_KOS = tb_tipekamar.ID_KOS WHERE ST_POST ='1' ORDER BY RAND()");?>
 
-    <?php
-     $numOfCols = 3;
-     $rowCount = 0;
-     $bootstrapColWidth = 12 / $numOfCols;
-     ?>
-
-<?php
-            include ('config.php');
-            $keyword = $_POST['cari'];
-            $ambil = $koneksi->query("SELECT * FROM tb_tipekamar JOIN tb_datakos ON tb_tipekamar.ID_KOS=tb_datakos.ID_KOS WHERE FASILITAS_KAMAR LIKE '&".$keyword."%' 
-                OR JENIS_KOS LIKE '%".$keyword."%' 
-                OR KET_ALAMAT_KOS LIKE '%".$keyword."%' 
-                OR HARGA LIKE '%".$keyword."%' 
-                OR id_pemilik LIKE '%".$keyword."%' 
-                OR kab_kos LIKE '%".$keyword."%' 
-                OR kec_kos LIKE '%".$keyword."%' 
-                OR jalan_kos LIKE '%".$keyword."%' "); ?>
-
- <?php $hitung = mysqli_num_rows($ambil); 
-  if($hitung>0){ 
-  while ($perkos = $ambil->fetch_array()) { ?>
+        <?php while($perkos= $ambil->fetch_assoc()){ ?>
             <div class="col-md-4">
                 <div class="thumbnail">
                     
@@ -149,16 +130,6 @@ if(isset($_SESSION['level'])){
 
         </div>
     </div>
-
-            <?php 
-                $rowCount++;
-                if ($rowCount % $numOfCols == 0) echo '</div><div class="row">';
-                    }
-                    else echo "<script>alert('Pencarian Kos Anda Tidak Ditemukan');</script>";
-                    echo "<script>location='index.php';</script>";
-                     ?>
-        </div>
-    </div>
 </section>
 
 <section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="contacts1-3" data-rv-view="47" style="background-color: rgb(60, 60, 60);">
@@ -177,10 +148,10 @@ Jember</p>
                     </div>
                     <div class="col-sm-4">
                         <p class="mbr-contacts__text"></p><p><strong>CONTACTS</strong><br>
-Email: Yangekos@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Email: YaNgekos@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;<br>
 Phone: 081333693785<br><br></p><p></p>
                     </div>
-                    <div class="col-sm-4"><p class="mbr-contacts__text"><strong>LINKS</strong></p><ul class="mbr-contacts__list"><li><a class="mbr-contacts__link text-gray" href="https://mobirise.com/">F</a>acebook</li><li><a class="mbr-contacts__link text-gray" href="https://mobirise.com/mobirise-free-win.zip">T</a>witter</li><li>Discord</li></ul></div>
+                    <div class="col-sm-4"><p class="mbr-contacts__text"><strong>SOSMED</strong></p><ul class="mbr-contacts__list"><li><a class="mbr-contacts__link text-gray" href="https://mobirise.com/">F</a>acebook</li><li><a class="mbr-contacts__link text-gray" href="https://mobirise.com/mobirise-free-win.zip">T</a>witter</li><li>Discord</li></ul></div>
                 </div>
             </div>
         </div>
@@ -192,14 +163,14 @@ Phone: 081333693785<br><br></p><p></p>
     <div class="mbr-section__container container">
         <div class="mbr-footer mbr-footer--wysiwyg row" style="padding-top: 36.9px; padding-bottom: 36.9px;">
             <div class="col-sm-12">
-                <p class="mbr-footer__copyright">Copyright (c) 2019 YaNgekos <a class="mbr-footer__link text-gray" href="https://mobirise.com/">Terms of Use</a>  | <a class="mbr-footer__link text-gray" href="https://mobirise.com/">Privacy Policy</a></p>
+                <p class="mbr-footer__copyright">Copyright (c) 2019 YaNgekos <a class="mbr-footer__link text-gray" href="https://mobirise.com/"></a>  | <a class="mbr-footer__link text-gray" href="https://mobirise.com/">Privacy Policy</a></p>
             </div>
         </div>
     </div>
 </footer>
 
 
-  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+<script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/smooth-scroll/smooth-scroll.js"></script>
   <script src="assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js"></script>
