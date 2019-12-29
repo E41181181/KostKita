@@ -118,6 +118,7 @@ if(isset($_SESSION['level'])){
             include ('config.php');
             $keyword = $_POST['cari'];
             $ambil = $koneksi->query("SELECT * FROM tb_tipekamar JOIN tb_datakos ON tb_tipekamar.ID_KOS=tb_datakos.ID_KOS WHERE FASILITAS_KAMAR LIKE '&".$keyword."%' 
+                OR NAMA_KOS LIKE '%".$keyword."%'
                 OR JENIS_KOS LIKE '%".$keyword."%' 
                 OR KET_ALAMAT_KOS LIKE '%".$keyword."%' 
                 OR HARGA LIKE '%".$keyword."%' 
@@ -154,8 +155,8 @@ if(isset($_SESSION['level'])){
                 $rowCount++;
                 if ($rowCount % $numOfCols == 0) echo '</div><div class="row">';
                     }
-                    else echo "<script>alert('Pencarian Kos Anda Tidak Ditemukan');</script>";
-                    echo "<script>location='index.php';</script>";
+                    else echo "<script>alert('Pencarian Kos Anda Tidak Ditemukan'); location='index.php';</script>";
+                
                      ?>
         </div>
     </div>

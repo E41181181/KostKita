@@ -51,18 +51,18 @@
                         <a class="dropdown-item" href="2user/login.php">Pemilik</a>
                         <a class="dropdown-item" href="3penyewa/login.php">Penyewa</a>                        
                     </div>
-                </li>
-                <li class="nav-item nav-btn">
-                    <a class="nav-link btn btn-default btn-default-outline" href="#">CARI KOST SEKARANG</a>
+                </li>                
                 <li class="nav-item dropdown">
                     <a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="false">Pusat Bantuan </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="pb1.html">Bagaimana cara mengiklankan kos ?</a>
                         <a class="dropdown-item" href="pb2.html">Bagaiamana cara menyewa kos ?</a> 
                         <a class="dropdown-item" href="pb3.html">Tentang Kami</a>  
- 
 
-                </li></ul>
+
+                </li>
+                <li class="nav-item nav-btn">
+                    <a class="nav-link btn btn-default btn-default-outline" href="#">CARI KOST SEKARANG</a></ul>
 
         </div>
 
