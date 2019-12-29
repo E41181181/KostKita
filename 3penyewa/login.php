@@ -26,39 +26,42 @@
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+ <link rel="stylesheet"  href="stylebg.css/bglogin.css">
 </head>
+
 <body class="hold-transition login-page">
 <?php 
 $belomlogin = "Harap Login Terlebih Dahulu";
 $passwordsalah = "Login gagal! Username atau Password Salah";
 $logout="Logout Berhasil";
 
-	if(isset($_GET['pesan'])){
-		if($_GET['pesan'] == "gagal"){
-			echo "<script type='text/javascript'>alert('$passwordsalah');</script>";
-		}else if($_GET['pesan'] == "logout"){
-			echo "<script type='text/javascript'>alert('$logout');</script>";
-		}else if($_GET['pesan'] == "belum_login"){
-			echo "<script type='text/javascript'>alert('$belomlogin');</script>";
-		}
-	}
-	?>
+  if(isset($_GET['pesan'])){
+    if($_GET['pesan'] == "gagal"){
+      echo "<script type='text/javascript'>alert('$passwordsalah');</script>";
+    }else if($_GET['pesan'] == "logout"){
+      echo "<script type='text/javascript'>alert('$logout');</script>";
+    }else if($_GET['pesan'] == "belum_login"){
+      echo "<script type='text/javascript'>alert('$belomlogin');</script>";
+    }
+  }
+  ?>
 
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>Login User</b></a>
+    <a href="#"><b>Ya Ngekos</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">Login Penyewa</p>
 
       <form action="proses_login.php" method="post">
         <div class="input-group mb-3">
           <input type="text" name="username" class="form-control" placeholder="Username">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+             
             </div>
           </div>
         </div>
@@ -66,43 +69,44 @@ $logout="Logout Berhasil";
           <input type="password" name="password" class="form-control" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+             <span class="fas fa-eye-slash"></span>
             </div>
           </div>
         </div>
-        <div class="row">
+        <p class="mb-1">
+        <a href="lupa.html">Lupa Password ?</a>
+       
+
+      <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
               <input type="checkbox" id="remember">
               <label for="remember">
-                Remember Me
+                Simpan Sandi
               </label>
             </div>
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" class="btn btn-success btn-block">Login</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
 
       <div class="social-auth-links text-center mb-3">
-        <p>- OR -</p>
-        <a href="" class="btn btn-block btn-primary" >
-          <i class="fab fa-facebook mr-2"></i> Login
+        <p>- atau -</p>
+        <a href="eror.html" class="btn btn-block btn-primary" >
+          <i class="fab fa-facebook mr-2"></i> Login degan Facebook
         </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Back
-        </a>
+        
       </div>
       <!-- /.social-auth-links -->
 
-      <p class="mb-1">
-        <a href="forgot-password.html">I forgot my password</a>
+      
       </p>
       <p class="mb-0">
-        <a href="register.html" class="text-center">Register a new membership</a>
+        <center><a href="../register02.php" class="text-center">Belum Punya Akun ? <u>Daftar disini</u></a></center>
       </p>
     </div>
     <!-- /.login-card-body -->
