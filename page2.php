@@ -1,7 +1,7 @@
 <?php
 session_start();
 //koneksi ke database kita
-$koneksi= new mysqli ("localhost","root","","11des");
+$koneksi= new mysqli ("localhost","root","","kos");
 ?>
 <!DOCTYPE html>
 <html>
@@ -76,7 +76,7 @@ $koneksi= new mysqli ("localhost","root","","11des");
             style="padding-top: 93px; padding-bottom: 93px;">
             <div class="row">
             <?php		
-                                $ambil=$koneksi->query("SELECT * FROM tb_datakos INNER JOIN tb_tipekamar ON tb_datakos.ID_KOS = tb_tipekamar.ID_KOS WHERE tb_tipekamar.ID_KAMAR='$_GET[id]'");
+                                $ambil=$koneksi->query("SELECT * FROM tb_datakos INNER JOIN tb_tipekamar ON tb_datakos.ID_KOS = tb_tipekamar.ID_KOS INNER JOIN tb_harga WHERE tb_tipekamar.ID_KAMAR = tb_harga.ID_KAMAR AND  tb_datakos.ID_KOS='$_GET[id]'");
                                $detail_perkos= $ambil->fetch_assoc();?>
                                 <!--<pre><?php print_r($detail_perkos); ?></pre>-->
                 <div class="mbr-box mbr-box--fixed mbr-box--adapted">
@@ -84,10 +84,11 @@ $koneksi= new mysqli ("localhost","root","","11des");
                         style="width: 50%;">
                         <figure
                             class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width">
-                            <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='500px' height='300px' class='mbr-figure__img'/>";?>
-                           
-                        </figure>
-                                
+                            <img src="foto_kos/<?php echo $detail_perkos['FOTO_KOS'];?>" width="500px" height="300px"
+                                class="mbr-figure__img"></figure>
+
+                       
+                            <a class="gmaps" href="<?php echo $detail_perkos['MAPS'];  ?>" target="_blank">Buka Di Google Maps</a>
                     </div>
                     <div
                         class="mbr-box__magnet mbr-class-mbr-box__magnet--center-left col-sm-6 content-size mbr-section__right">
@@ -99,7 +100,6 @@ $koneksi= new mysqli ("localhost","root","","11des");
                         <div class="mbr-section__container mbr-section__container--middle">
                         <div class="mbr-article mbr-article--auto-align mbr-article--wysiwyg">
                             <!--ISIAN-->
-                            <table>
                             <tr>	
                                 <td>Jalan</td>
                                 <td> :</td>
@@ -170,8 +170,8 @@ $koneksi= new mysqli ("localhost","root","","11des");
                         </table>                                                  
                         </div>                         
                     </div>
-                        <a href="cbsewa.php?id=<?php echo $detail_perkos['ID_KAMAR']; ?>" class="btn btn-info">Sewa</a>
-                        <a href="tanya_pemilik.php?id=<?php echo $detail_perkos['ID_KOS']; ?>" class="btn btn-info">Tanyak Pemilik</a>
+                        <a href="sewa.php?id=<?php echo $detail_perkos['ID_KOS']; ?>" class="btn btn-Danger">Sewa</a>
+                        <a href="https://api.whatsapp.com/send?phone=<?= $detail_perkos['WA']; ?>"class="btn btn-info">tanya pemilik</a>
                         <a href="wishlist.php?id=<?php echo $detail_perkos['ID_KOS'];?>" class="btn btn-info">Wishlist</a>
                         </div>
                     </div>
