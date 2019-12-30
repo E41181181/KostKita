@@ -2,75 +2,50 @@
 session_start();
 //koneksi ke database kita
 $koneksi= new mysqli ("localhost","root","","11des");
+
+
+if(isset($_SESSION['level'])){
+    if($_SESSION['level'] == "2"){
+        include 'navbarLoginPemilik.php';
+    }else if($_SESSION['level'] == "3"){
+        include 'navbarLoginPenyewa.php';
+    }
+}else include 'navbarAwal.php';
+
+
+  
+
 ?>
-<!DOCTYPE html>
-<html>
 
-<head>
-    <!-- Site made with Mobirise Website Builder v4.10.15, https://mobirise.com -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="generator" content="Mobirise v4.10.15, mobirise.com">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
-    <meta name="description" content="Website Generator Description">
-
-    <title>Menu kost</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700,400&subset=cyrillic,latin,greek,vietnamese">
-    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/mobirise/css/style.css">
-    <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
-    <link rel="stylesheet" href="assets/mobirise-gallery/style.css">
-    <link rel="stylesheet" href="assets/mobirise-slider/style.css">
-    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-
-
-
-</head>
-
-<body>
-    <section
-        class="mbr-navbar mbr-navbar--freeze mbr-navbar--absolute mbr-navbar--sticky mbr-navbar--auto-collapse mbr-navbar--transparent"
-        id="menu-1" data-rv-view="41">
-        <div class="mbr-navbar__section mbr-section">
-            <div class="mbr-section__container container">
-                <div class="mbr-navbar__container">
-                    <div class="mbr-navbar__column mbr-navbar__column--s mbr-navbar__brand">
-                        <span class="mbr-navbar__brand-link mbr-brand mbr-brand--inline">
-
-                            <span class="mbr-brand__name"><a class="mbr-brand__name text-white"
-                                    href="https://mobirise.com">Ya NgeKost</a></span>
-                        </span>
-                    </div>
-                    <div class="mbr-navbar__hamburger mbr-hamburger"><span class="mbr-hamburger__line"></span></div>
-                    <div class="mbr-navbar__column mbr-navbar__menu">
-                        <nav class="mbr-navbar__menu-box mbr-navbar__menu-box--inline-right">
-                            <div class="mbr-navbar__column">
-                                <ul
-                                    class="mbr-navbar__items mbr-navbar__items--right float-left mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active">
-                                    <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white"
-                                            href="https://mobirise.com">HOME</a></li>
-                                    <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white"
-                                            href="https://mobirise.com">Cari Kost</a></li>
-                                    <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white"
-                                            href="https://mobirise.com">FAQ</a></li>
-                                </ul>
-                                <ul
-                                    class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-inverse mbr-buttons--active">
-                                    <li class="mbr-navbar__item"><a class="mbr-buttons__btn btn btn-default"
-                                            href="https://mobirise.com">Daftar</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="engine"><a href="https://mobirise.info/s">bootstrap theme</a></section>
+    
     <section class="mbr-gallery mbr-section mbr-section--no-padding" id="gallery1-x" data-rv-view="96" style="background-color: rgb(37, 37, 37);">
+    <?php		
+                               $ambil=$koneksi->query("SELECT * FROM tb_datakos INNER JOIN tb_tipekamar ON tb_datakos.ID_KOS = tb_tipekamar.ID_KOS WHERE tb_tipekamar.ID_KAMAR='$_GET[id]'");
+                               $detail_perkos= $ambil->fetch_assoc();?>
+                                <!--<pre><?php print_r($detail_perkos); ?></pre>-->
+    <div class="mbr-box__magnet mbr-class-mbr-box__magnet--center-left col-sm-6 content-size mbr-section__right" style="background-color: rgb(37, 37, 37);">
+    <p>   </p><p>  </p>     <p></p>
+                    <div class="mbr-section__container mbr-section__container--middle">
+                        <div class="mbr-header mbr-header--auto-align mbr-header--wysiwyg">
+                            <h3 class="mbr-header__text"><font color="white"> <p>  </p>
+                                
+                        <?php echo "<br>";?>
+                        
+                        
+                        </font></h3>
+                            
+                        </div>
+                        <div><p></p></div>
+                    </div>
+                    <div class="mbr-section__container mbr-section__container--middle">
+                        <div class="mbr-article mbr-article--auto-align mbr-article--wysiwyg"><p></p></div>
+                    </div>
+                    <div class="mbr-section__container">
+                        <div class="mbr-buttons mbr-buttons--auto-align btn-inverse"><a  href="https://mobirise.com"></a></div>
+                    </div>
+                </div>
     <!-- Gallery -->
     <div class=" mbr-gallery-layout-default">
         <div>
@@ -78,13 +53,13 @@ $koneksi= new mysqli ("localhost","root","","11des");
 
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mbr-gallery-item">
                     <a href="#lb-gallery1-x" data-slide-to="0" data-toggle="modal">
-                        <img src="aset_fot/fotokos10.jpg" alt="" title="">
+                    <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='600px' height='360px' />";?>
                         <span class="icon glyphicon glyphicon-zoom-in"></span>
                     </a>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mbr-gallery-item">
                     <a href="#lb-gallery1-x" data-slide-to="1" data-toggle="modal">
-                        <img src="aset_fot/fotokos11.jpg" alt="" title="">
+                    <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='600px' height='360px' />";?>
                         <span class="icon glyphicon glyphicon-zoom-in"></span>
                     </a>
                 </div>
@@ -104,9 +79,9 @@ $koneksi= new mysqli ("localhost","root","","11des");
                     </ol>
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img src="aset_fot/fotokos10.jpg" alt="" title="">
+                        <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='600px' height='360px' />";?>
                         </div><div class="item">
-                            <img src="aset_fot/fotokos11.jpg" alt="" title="">
+                        <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='600px' height='360px' />";?>
                         </div>
                     </div>
                     <a class="left carousel-control" role="button" data-slide="prev" href="#lb-gallery1-x">
@@ -126,41 +101,17 @@ $koneksi= new mysqli ("localhost","root","","11des");
             </div>
         </div>         
     </div>
-    <div class="mbr-box__magnet mbr-class-mbr-box__magnet--center-left col-sm-6 content-size mbr-section__right">
-                    <div class="mbr-section__container mbr-section__container--middle">
-                        <div class="mbr-header mbr-header--auto-align mbr-header--wysiwyg">
-                            <h3 class="mbr-header__text">DRAG AND DROP WEBSITE BUILDER</h3>
-                            
-                        </div>
-                    </div>
-                    <div class="mbr-section__container mbr-section__container--middle">
-                        <div class="mbr-article mbr-article--auto-align mbr-article--wysiwyg"><p>Make your own website in a few clicks! Mobirise helps you cut down development time by providing you with a flexible website editor with a drag and drop interface.</p></div>
-                    </div>
-                    <div class="mbr-section__container">
-                        <div class="mbr-buttons mbr-buttons--auto-align btn-inverse"><a class="mbr-buttons__btn btn btn-lg btn-default" href="https://mobirise.com">LEARN MORE</a></div>
-                    </div>
-                </div> 
+    
+    
+     
 </section>
     <section class="mbr-section mbr-section--relative mbr-after-navbar" id="msg-box4-c" data-rv-view="43"
         style="background-color: rgb(37, 37, 37);">
 
         <div class="mbr-section__container mbr-section__container--isolated container"
             style="padding-top: 93px; padding-bottom: 93px;">
-            <div class="row">
-            <?php		
-                                $ambil=$koneksi->query("SELECT * FROM tb_datakos INNER JOIN tb_tipekamar ON tb_datakos.ID_KOS = tb_tipekamar.ID_KOS WHERE tb_tipekamar.ID_KAMAR='$_GET[id]'");
-                               $detail_perkos= $ambil->fetch_assoc();?>
-                                <!--<pre><?php print_r($detail_perkos); ?></pre>-->
-                <div class="mbr-box mbr-box--fixed mbr-box--adapted">
-                    <div class="mbr-box__magnet mbr-box__magnet--top-right mbr-section__left col-sm-6 image-size"
-                        style="width: 50%;">
-                        <figure
-                            class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width">
-                            <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='500px' height='300px' class='mbr-figure__img'/>";?>
-                           
-                        </figure>
-                                
-                    </div>
+            <div class="row">           
+                
                     <div
                         class="mbr-box__magnet mbr-class-mbr-box__magnet--center-left col-sm-6 content-size mbr-section__right">
                         <div class="mbr-section__container mbr-section__container--middle">
@@ -309,6 +260,7 @@ $koneksi= new mysqli ("localhost","root","","11des");
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/smooth-scroll/smooth-scroll.js"></script>
     <script src="assets/mobirise/js/script.js"></script>
+    <script src="assets/dropdown-menu/script.js"></script>
 
 
 </body>

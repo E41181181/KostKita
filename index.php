@@ -120,7 +120,7 @@ if(isset($_SESSION['level'])){
                             <font size ="3">Kos <?php echo $perkos['JENIS_KOS'];?><br>
                             <td> Stok Kamar : <?php echo $perkos['STOK_KAMAR'];?></br>
                             <?php echo $perkos['KET_ALAMAT_KOS'];?></br></center>
-                            <p><center><a href="page2.php?id=<?php echo $perkos['ID_KOS']; ?>" class="btn btn-info">Lihat Lebih Lengkap</a></center></font></p>
+                            <p><center><a href="page2 copy.php?id=<?php echo $perkos['ID_KAMAR']; ?>" class="btn btn-info">Lihat Lebih Lengkap</a></center></font></p>
                             
                         </div>
                         
