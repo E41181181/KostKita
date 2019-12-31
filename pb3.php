@@ -70,68 +70,74 @@ if(isset($_SESSION['level'])){
     </div>
 </section>
 
-<section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="form2-9" data-rv-view="38" style="background-color: rgb(124, 112, 107);">
+<section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="form2-9" data-rv-view="38" style="background-color: rgb(255, 255, 255);">
     
     <div class="mbr-section__container mbr-section__container--sm-padding container" style="padding-top: 27.2px; padding-bottom: 27.2px;">
         <div class="row">
             <div class="col-sm-12">
                 <div class="row">
-                        <div class="mbr-header mbr-header--center mbr-header--std-padding">
-                            <h2 class="mbr-header__text">Cari Kost&nbsp;</h2>
-                        </div>                        
- <form action="indexcari.php" method="post" >                            
-   <div class="container">
-      <div class="row ">
-      <div class="col ">
-        <div class="col-sm-10">
-           <form group>
-           <input type="text" class="form-control" name="cari" placeholder=" cari kos berdasarkan  Lokasi / Jenis / Harga / Nama Kos " >
-           <span  class="fas fa-search"></span>  
-        </div>
-    <div class="col-sm-2">
-         <button type="submit" class="mbr-buttons__btn btn btn-lg btn-danger">
-        <span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>Cari</button>
-        </div>  
-        </div>
-      </div>
-                           
-                     </form>
-                </div>
-            </div>
+                        <b><div class="mbr-header mbr-header--center mbr-header--std-padding">
+                            <h2 class="mbr-header__text">&nbsp;</h2></div></b>
+           
+<div class ="container">
+<div class ="row">
+    <div class="col-sm-12">
+    <div class="thumbnail">
+    
+<ol><h2><center>YA Ngekost</center></h2>
+<font size="5">Adalah sebuah aplikasi pencari kos yang menghubungkan antara pemilik dan user atau calon penyewa kost secara online
+<li>Pemilik Kos</li>
+Adalah seseorang yang dapat mengiklankan kost serta namanya tertera pada surat kepemilikan kost yang dapat dipertanggungjawabkan
+<li>User atau Calon Penyewa</li>
+Adalah anak kost yang menyewa kamar pada pemilik kost dan melakukan booking serta bayar kost sesuai kontrak yang tercantum didalam deskripsi 
+</ul></ol>
+<h2><center>Fitur-Fitur Ya Ngekost</h2></center>
+Apa yang membedakan aplikasi Ya Ngekos dengan yang lainnya? informasi dari Ya Ngekos sangat jelas dan akurat juga dilengkapi fasilitas kamar dan bersama, Berikut fitur-fitu diantaranya:
+<ol>
+<li>Fitur Cari Kos</li>
+Fitur ini untuk mempermudah pencarian kost yg sesuai dengan kebutuhan pencari kos, dimana kita akan di suguhkan dengan pencarian yg lebih efektif dan efisien yaitu menurut wilayah, harga , dan jenis kos.
+<li>Fitur Log In</li>
+Fitur ini digunakan untuk proses sewa, tanyak pemilik, dan wishlist, serta fitur lainnya. Penggunaan fitur login ini sangat mudah yaitu dengan memasukkan username dan password  lalu klik Log in.
+<li>Fitur Daftar sebagai Pemilik Kos</li>
+Fitur ini digunakan untuk mendaftarkan pemilik kos sehingga pemilik kos dapat mengiklankan kosnya. Penggunaanya  yaitu klik tombok Daftar sebagai Pemilik Kos lalu isi data diri, datakos,data tipe kamar dan ikut sesuai dengan petunujuk di aplikasi.
+<li>Fitur Daftar Sebag ai Calon Penyewa</li>
+Fitur ini digunakan untuk mendaftarkan sebagai calon penyewa sehingga calon penyewa dapat melakukan proses penyewaan di aplikasi.
+<li>Fitur Penyewaan</li>
+Fitur ini membuat pengguna mampu melihat kost yang sedang dihubunginya. Fitur ini hanya bisa diakses jika pengguna telah login. Penggunaannya dengan cara  mengklik tombol penyewaan maka akan muncul melihat kost yang telah dihubunginya.
+<li>Fitur Wishlist</li>
+Fitur ini dapat menandai kost yang disukainya.Fitur ini mengharuskan pengguna untuk login terlebih dahulu. Penggunaaanya yaitu  dengan cara  mengklik tombol wishlist.
+<li>Fitur Tanya Pemilik</li>
+Fitur ini memungkinkan pengguna untuk medapatkan informasi lebih detail mengenai kost yang diinginkannya. 
+<li>Fitur Riwayat Pencarian</li>
+Fitur ini membuat pengguna mampu melihat kost apa saja yang telah dilihatnya. Fitur ini dapat diakses tanpa login.
+<li>Fitur Halaman Pemilik Kost</li>
+Fitur ini digunakan untuk mempermudah pemilik kost dalam mengupdate data diri, mengupdate datakos dan menambahkan kos baru apabila pemilik kos mempunyai kos lebih dari satu,serta dapat melihat daftar penyewa yang ada dikos tersebut.
+<li>Fitur Tambah Kost</li>
+Fitur ini diperuntukkan untuk pemilik kos apabila mempunyai kos lebih dari satu,fitur ini dapat dilakukan jika sudah melakukan proses login.
+<li>Fitur Profil Saya</li>
+Fitur ini diperuntukkan untuk pemilik kos  atau calon penyewa dimana dapat melihat data diri serta mengedit data diri sesuai dengan keadaan saat ini, fitur ini dapat dilakukan jika sudah melakukan proses login.
+<li>Fitur Profil Data Kos</li>
+Fitur ini diperuntukkan untuk pemilik kos dimana dapat melihat data kos serta mengedit data diri sesuai dengan keadaan saat ini,fitur ini dapat dilakukan jika sudah melakukan proses login.
+<li>Fitur Daftar Penyewa Kost</li>
+Fitur ini diperuntukkan untuk pemilik kos dimana dapat melihat siapa saja yg menyewa kos tersebut,fitur ini dapat dilakukan jika sudah melakukan proses login.
+<li>Fitur Halaman Calon Penyewa</li>
+Fitur ini digunakan untuk mempermudah Calon penyewa dalam mengupdate data diri, mengupdate datakos ,menampilkan wishlist kos , serta penyewaan.
+<li>Fitur Logout</li>
+Fitur ini digunakan untuk keluar dari aplikasi.
+<li>Fitur Pusat Bantuan</li>
+Fitur ini digunakan untuk pemilik kos atau calon penyewa apabila mengalami kesulitan dalam penggunaan aplikasi serta untuk memberi informasi tentang aplikasi kos.
+</ol></font>
+
+
         </div>
     </div>
+</div>
 </section>
+<section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="form2-9" data-rv-view="38" style="background-color: rgb(255, 255, 255);">
+    
+    <div class="mbr-section__container mbr-section__container--sm-padding container" style="padding-top: 27.2px; padding-bottom: 27.2px;"></section>
 
-<section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="features1-8" data-rv-view="44" style="background-color: rgb(255, 255, 255);">            
-    <div class="mbr-section__container container mbr-section__container--std-top-padding" style="padding-top: 93px;">
-        <div class="mbr-section__row row">
-        <div class="row">
-            
-        <?php $ambil=$koneksi->query("SELECT * FROM tb_datakos INNER JOIN tb_tipekamar ON tb_datakos.ID_KOS = tb_tipekamar.ID_KOS WHERE ST_POST ='1' ORDER BY RAND()");?>
-
-        <?php while($perkos= $ambil->fetch_assoc()){ ?>
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    
-                        <div class="caption">
-                            <p><center><font size ="4"><?php echo $perkos['NAMA_KOS'];?></center></font></br>
-                            <center><img src="aset_fot/<?php echo $perkos['FOTO_KOS'];?>" width="320px" height="300px"></br></p>
-                            <font size ="3"><b>Harga : Rp<?php echo number_format($perkos['HARGA']) ;?></b></font></br>
-                            <font size ="3">Kos <?php echo $perkos['JENIS_KOS'];?><br>
-                            <td> Stok Kamar : <?php echo $perkos['STOK_KAMAR'];?></br>
-                            <?php echo $perkos['KET_ALAMAT_KOS'];?></br></center>
-                            <p><center><a href="page2 new.php?id=<?php echo $perkos['ID_KAMAR']; ?>" class="btn btn-info">Lihat Lebih Lengkap</a></center></font></p>
-                            
-                        </div>
-                        
-                </div>
-            </div>
-            <?php }?>
-
-        </div>
-    </div>
-</section>
-
+                     <!--footer-->
 <section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="contacts1-3" data-rv-view="47" style="background-color: rgb(60, 60, 60);">
     
     <div class="mbr-section__container container">
@@ -148,7 +154,7 @@ Jember</p>
                     </div>
                     <div class="col-sm-4">
                         <p class="mbr-contacts__text"></p><p><strong>CONTACTS</strong><br>
-Email: YaNgekos@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Email: yangekos@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;<br>
 Phone: 081333693785<br><br></p><p></p>
                     </div>
                     <div class="col-sm-4"><p class="mbr-contacts__text"><strong>SOSMED</strong></p><ul class="mbr-contacts__list"><li><a class="mbr-contacts__link text-gray" href="https://mobirise.com/">F</a>acebook</li><li><a class="mbr-contacts__link text-gray" href="https://mobirise.com/mobirise-free-win.zip">T</a>witter</li><li>Discord</li></ul></div>

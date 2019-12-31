@@ -58,15 +58,16 @@
                     <a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="false">Login</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="2user/login.php">Pemilik</a>
-                        <a class="dropdown-item" href="3penyewa/login.php">Penyewa</a>                        
+                        <a class="dropdown-item" href="3penyewa/login.php">Penyewa</a>
+                        <a class="dropdown-item" href="3penyewa/login.php">Admin</a>                        
                     </div>
                 </li>                
                 <li class="nav-item dropdown">
                     <a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="false">Pusat Bantuan </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="pb1.html">Bagaimana cara mengiklankan kos ?</a>
-                        <a class="dropdown-item" href="pb2.html">Bagaiamana cara menyewa kos ?</a> 
-                        <a class="dropdown-item" href="pb3.html">Tentang Kami</a>  
+                        <a class="dropdown-item" href="pb1.php">Bagaimana cara mengiklankan kos ?</a>
+                        <a class="dropdown-item" href="pb2.php">Bagaiamana cara menyewa kos ?</a> 
+                        <a class="dropdown-item" href="pb3.php">Tentang Kami</a>  
 
 
                 </li>
