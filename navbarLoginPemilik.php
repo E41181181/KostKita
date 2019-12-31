@@ -47,10 +47,22 @@
             <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                 <div class="hamburger-icon"></div>
             </button>
-
+            
             <ul class="nav-dropdown collapse pull-xs-right navbar-toggleable-sm nav navbar-nav" id="exCollapsingNavbar">
                 <li class="nav-item"><a class="nav-link link" href="index.php">Home</a></li>
-                <li class="nav-item dropdown open"><a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="true"><?php echo $_SESSION['username'];?></a>                                                
+                <li class="nav-item dropdown open"><a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="true">
+                <?php
+            $nama = "SELECT NAMA_PEMILIK FROM tb_pemilik where ID_PEMILIK = '".$_SESSION['username']."' ";
+          $query = mysqli_query($koneksi, $nama);
+
+if (!$query) {
+	die ('SQL Error: ' . mysqli_error($koneksi));
+}
+while ($row = mysqli_fetch_array($query))
+{  
+    echo $row['NAMA_PEMILIK'];
+}
+?></a>                                                
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="2user/profile.php">Profil</a>
                         <a class="dropdown-item" href="2user/infokos.php">Kost Saya</a>

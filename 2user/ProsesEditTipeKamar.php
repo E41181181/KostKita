@@ -35,9 +35,9 @@ if (isset($_POST['save'])){
     WHERE tb_tipekamar.ID_KAMAR = $idkamar");
 
 
-    move_uploaded_file($_FILES['Edfotokamar']['tmp_name'], "../aset_fot/".$_FILES['Edfotokamar']['name']);
+    move_uploaded_file($_FILES['Edfotokamar']['tmp_name'], "../aset_fot/fototipekamar/".$_FILES['Edfotokamar']['name']);
      echo"<script>alert('Gambar Berhasil diupload !');</script>";
-     header("location:infokos.php");
+     //header("location:infokos.php");
     } 
 
 //pembayaran
