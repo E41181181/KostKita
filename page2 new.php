@@ -24,7 +24,10 @@ if(isset($_SESSION['level'])){
     
     <div class="mbr-box__magnet mbr-class-mbr-box__magnet--center-left col-sm-6 content-size mbr-section__right" style="background-color: rgb(105, 105, 105);">
     <?php       
-                               $ambil=$koneksi->query("SELECT * FROM tb_datakos INNER JOIN tb_tipekamar ON tb_datakos.ID_KOS = tb_tipekamar.ID_KOS WHERE tb_tipekamar.ID_KAMAR='$_GET[id]'");
+                               $ambil=$koneksi->query("SELECT * FROM tb_datakos 
+                               INNER JOIN tb_tipekamar ON tb_datakos.ID_KOS = tb_tipekamar.ID_KOS 
+                               INNER JOIN tb_pemilik on tb_datakos.ID_PEMILIK =tb_pemilik.ID_PEMILIK
+                               WHERE tb_tipekamar.ID_KAMAR='$_GET[id]'");
                                $detail_perkos= $ambil->fetch_assoc();?>
                                 <!--<pre><?php print_r($detail_perkos); ?></pre>-->
     <p>   </p><p>  </p>     <p></p>
@@ -196,7 +199,7 @@ if(isset($_SESSION['level'])){
                         </div>                         
                     </div>
                         <a href="cbsewa.php?id=<?php echo $detail_perkos['ID_KAMAR']; ?>" class="btn btn-info">Sewa</a>
-                        <a href="tanya_pemilik.php?id=<?php echo $detail_perkos['ID_KOS']; ?>" class="btn btn-info">Tanyak Pemilik</a>
+                        <a href="https://api.whatsapp.com/send?phone=<?php echo $detail_perkos['NO_HP_PEMILIK']; ?>"class="btn btn-info" target="_blank">tanya pemilik</a>
                         <a href="wishlist.php?id=<?php echo $detail_perkos['ID_KOS'];?>" class="btn btn-info">Wishlist</a>
                         </div>
                     </div>
