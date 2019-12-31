@@ -57,13 +57,13 @@ if(isset($_SESSION['level'])){
 
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mbr-gallery-item">
                     <a href="#lb-gallery1-x" data-slide-to="0" data-toggle="modal">
-                    <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='600px' height='360px' />";?>
+                    <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='500px' height='480px' />";?>
                         <span class="icon glyphicon glyphicon-zoom-in"></span>
                     </a>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mbr-gallery-item">
                     <a href="#lb-gallery1-x" data-slide-to="1" data-toggle="modal">
-                    <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='600px' height='360px' />";?>
+                    <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KAMAR']."' width='500px' height='480px' />";?>
                         <span class="icon glyphicon glyphicon-zoom-in"></span>
                     </a>
                 </div>
@@ -83,9 +83,9 @@ if(isset($_SESSION['level'])){
                     </ol>
                     <div class="carousel-inner">
                         <div class="item active">
-                        <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='600px' height='360px' />";?>
+                        <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='500px' height='450px' />";?>
                         </div><div class="item">
-                        <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='600px' height='360px' />";?>
+                        <?php echo "<img src='aset_fot/fototipekamar/".$detail_perkos['FOTO_KAMAR']."' width='500px' height='480px' />";?>
                         </div>
                     </div>
                     <a class="left carousel-control" role="button" data-slide="prev" href="#lb-gallery1-x">

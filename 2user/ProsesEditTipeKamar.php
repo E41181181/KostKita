@@ -36,8 +36,9 @@ if (isset($_POST['save'])){
 
 
     move_uploaded_file($_FILES['Edfotokamar']['tmp_name'], "../aset_fot/fototipekamar/".$_FILES['Edfotokamar']['name']);
-     echo"<script>alert('Gambar Berhasil diupload !');</script>";
-     //header("location:infokos.php");
+     
+     header("location:infokos.php");
+     echo"<script>alert('Kost Berhasil Diperbarui! Status menunggu persetujuan');</script>";
     } 
 
 //pembayaran

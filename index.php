@@ -102,7 +102,7 @@ if(isset($_SESSION['level'])){
     </div>
 </section>
 
-<section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="features1-8" data-rv-view="44" style="background-color: rgb(255, 255, 255);">            
+<section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="features1-8" data-rv-view="44" style="background-color: rgb(37, 37, 37);">            
     <div class="mbr-section__container container mbr-section__container--std-top-padding" style="padding-top: 93px;">
         <div class="mbr-section__row row">
         <div class="row">
@@ -114,8 +114,8 @@ if(isset($_SESSION['level'])){
                 <div class="thumbnail">
                     
                         <div class="caption">
-                            <p><center><font size ="4"><?php echo $perkos['NAMA_KOS'];?></center></font></br>
-                            <center><img src="aset_fot/<?php echo $perkos['FOTO_KOS'];?>" width="320px" height="300px"></br></p>
+                            <p><center><font size ="4"><b><?php echo $perkos['NAMA_KOS'];?></b></center></font></br>
+                            <center><img src="aset_fot/<?php echo $perkos['FOTO_KOS'];?>" width="320px" height="250px"></br></p>
                             <font size ="3"><b>Harga : Rp<?php echo number_format($perkos['HARGA']) ;?></b></font></br>
                             <font size ="3">Kos <?php echo $perkos['JENIS_KOS'];?><br>
                             <td> Stok Kamar : <?php echo $perkos['STOK_KAMAR'];?></br>
