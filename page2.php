@@ -1,7 +1,7 @@
 <?php
 session_start();
 //koneksi ke database kita
-$koneksi= new mysqli ("localhost","root","","kos2");
+$koneksi= new mysqli ("localhost","root","","11des");
 ?>
 <!DOCTYPE html>
 <html>
