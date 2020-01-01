@@ -117,7 +117,9 @@ if(isset($_SESSION['level'])){
 <?php
             include ('config.php');
             $keyword = $_POST['cari'];
-            $ambil = $koneksi->query("SELECT * FROM tb_tipekamar JOIN tb_datakos ON tb_tipekamar.ID_KOS=tb_datakos.ID_KOS WHERE FASILITAS_KAMAR LIKE '&".$keyword."%' 
+            $ambil = $koneksi->query("SELECT * FROM tb_datakos INNER JOIN tb_tipekamar ON tb_datakos.ID_KOS = tb_tipekamar.ID_KOS WHERE tb_tipekamar.ST_POST ='1' 
+                AND tb_tipekamar.STATUS_KAMAR ='Tersedia' AND 
+                FASILITAS_KAMAR LIKE '&".$keyword."%' 
                 OR NAMA_KOS LIKE '%".$keyword."%'
                 OR JENIS_KOS LIKE '%".$keyword."%' 
                 OR KET_ALAMAT_KOS LIKE '%".$keyword."%' 
