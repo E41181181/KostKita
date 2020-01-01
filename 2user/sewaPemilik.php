@@ -11,12 +11,12 @@ include_once ('header.php');
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>DataTables</h1>
+            <h1>Penyewa Kost</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">DataTables</li>
+              <li class="breadcrumb-item active">Penyewa Kost</li>
             </ol>
           </div>
         </div>
@@ -33,6 +33,8 @@ include_once ('header.php');
             </div>
             <!-- /.card-header -->
             <div class="card-body">
+            <a href="refresh.php">
+      <button type="submit" class="btn btn-primary">Refresh</button></a>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -40,6 +42,7 @@ include_once ('header.php');
                   <th>Nama Penyewa</th>
                   <th>No Penyewa</th>                  
                   <th>Harga Kamar </th>
+                  <th>Jatuh Tempo</th>
                   <th>Status </th>
                   <th colspan="2"><center>Pembayaran</center></th>
                   
@@ -72,6 +75,7 @@ echo'
                   <td>'.$row['NAMA_PENYEWA'].'</td>   
                   <td>'.$row['NO_HP_PENYEWA'].'</td>                  
                   <td>Rp. '.$row['HARGA'].'</td>
+                  <td>'.$row['TANGGAL_JATUH_TEMPO'].'</td>
                   <td>'.$row['STATUS_BAYAR'].'</td>                  
                   
                   <td><select class="form-control" id="navigation" onChange="window.document.location.href=this.options[this.selectedIndex].value;">

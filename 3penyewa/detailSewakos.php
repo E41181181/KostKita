@@ -74,7 +74,8 @@ $detail_kos= $ambil->fetch_assoc();
                                 <td>Alamat Lengkap </td>
                                 <td> :</td>
                                 <td><?php echo $detail_kos['KET_ALAMAT_PENYEWA'];?></td>
-                            </tr><br>                            
+                            </tr><br>
+                                                        
                             <tr>
                             <td><b>Detail Kos</b><td></Detail>
                             </tr><br>

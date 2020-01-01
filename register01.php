@@ -58,7 +58,7 @@
                                 <input type="text" class="form-control" name="alamatket" placeholder="Alamat (Kabupaten) ">
                             </div>
                             <div class="form-group">
-                                <input type="tel" class="form-control" name="notelp" placeholder="No telp (+62)" pattern="[+]{1}[0-9]{13}" required>
+                                <input type="tel" class="form-control" name="notelp" placeholder="No telp (+62)" required>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="email" placeholder="Email" >

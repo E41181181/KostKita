@@ -107,7 +107,7 @@ if(isset($_SESSION['level'])){
         <div class="mbr-section__row row">
         <div class="row">
             
-        <?php $ambil=$koneksi->query("SELECT * FROM tb_datakos INNER JOIN tb_tipekamar ON tb_datakos.ID_KOS = tb_tipekamar.ID_KOS WHERE ST_POST ='1' ORDER BY RAND()");?>
+        <?php $ambil=$koneksi->query("SELECT * FROM tb_datakos INNER JOIN tb_tipekamar ON tb_datakos.ID_KOS = tb_tipekamar.ID_KOS WHERE ST_POST ='1' AND tb_tipekamar.STATUS_KAMAR ='Tersedia' ORDER BY RAND()");?>
 
         <?php while($perkos= $ambil->fetch_assoc()){ ?>
             <div class="col-md-4">
@@ -118,7 +118,7 @@ if(isset($_SESSION['level'])){
                             <center><img src="aset_fot/<?php echo $perkos['FOTO_KOS'];?>" width="320px" height="250px"></br></p>
                             <font size ="3"><b>Harga : Rp<?php echo number_format($perkos['HARGA']) ;?></b></font></br>
                             <font size ="3">Kos <?php echo $perkos['JENIS_KOS'];?><br>
-                            <td> Stok Kamar : <?php echo $perkos['STOK_KAMAR'];?></br>
+                            <td> Stok Kamar : <?php echo $perkos['STATUS_KAMAR'];?></br>
                             <?php echo $perkos['KET_ALAMAT_KOS'];?></br></center>
                             <center><a href="cbsewa.php?id=<?php echo $perkos['ID_KAMAR']; ?>" class="btn btn-info">Sewa</a></font> 
                             <a href="page2 new.php?id=<?php echo $perkos['ID_KAMAR']; ?>" class="btn btn-info">Detail</a></font></center>

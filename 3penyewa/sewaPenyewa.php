@@ -38,12 +38,13 @@ include_once ('header.php');
                 <thead>
                 <tr>
                   <th>Nama Kos </th>                                     
-                  <th>Nama Pemilikt</th>
-                  <th>No Telp Pemilik</th>
-                  <th>Email Pemilik</th>
-                  <th>Harga Kamar </th>
-                  <th>Status </th>
-                  <th>Detail </th>                  
+                  <th>Nama Pemilik</th>
+                  <th>No Pemilik</th>                  
+                  <th>Harga</th>
+                  <th>Status</th>
+                  <th>Tanggal Sewa</th>
+                  <th>Deadline Pembayaran</th>
+                  <th>Detail</th>                  
                 </tr>
                 </thead>
 <?php
@@ -70,10 +71,11 @@ echo'
                 <tr>
                   <td>'.$row['NAMA_KOS'].'</td>                                    
                   <td>'.$row['NAMA_PEMILIK'].'</td>
-                  <td>'.$row['NO_HP_PEMILIK'].'</td>
-                  <td>'.$row['EMAIL_PEMILIK'].'</td>
+                  <td>'.$row['NO_HP_PEMILIK'].'</td>                  
                   <td>Rp. '.$row['HARGA'].'</td>
-                  <td>'.$row['STATUS_BAYAR'].'</td>                  
+                  <td>'.$row['STATUS_BAYAR'].'</td>
+                  <td>'.$row['TANGGAL_BAYAR'].'</td>
+                  <td>'.$row['TANGGAL_JATUH_TEMPO'].'</td>                  
                   <td><a href="detailSewakos.php?id='.$row['ID_SEWA'].'">Detail</a></td>
                   
                 </tr> ';
