@@ -60,23 +60,14 @@ add_chatinline(); </script>
                         <a class="dropdown-item dropdown-toggle" data-toggle="dropdown-submenu" href="#">Lainnya</a>
                         <div class="dropdown-menu dropdown-submenu">
                             <a class="dropdown-item" href="3penyewa/profile.php">Ubah Data Profil</a>                            
-                            <a class="dropdown-item" href="#">--------</a>
-                            <a class="dropdown-item" href="#">--------</a>
-                            <a class="dropdown-item" href="#">--------</a>
+                            <a class="dropdown-item" href="3penyewa/sewaPenyewa.php">Kost Saya</a>                            
                         </div></div><a class="dropdown-item" href="3penyewa/logout.php">Logout</a>
                     </div>
                 </li>
 
                 <li class="nav-item nav-btn">
                     <a class="nav-link btn btn-default btn-default-outline" href="#">Cari Kost Sekarang</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="false">Pusat Bantuan </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="pb1.html">==============</a>
-                        <a class="dropdown-item" href="pb2.html">===========</a> 
-                        <a class="dropdown-item" href="pb3.html">=======</a>  
-                </li>
+                </li>                
                 </ul>
 
         </div>

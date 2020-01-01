@@ -96,7 +96,8 @@ include_once ('config.php');
                         <p></p>
                         <div class="form-group">
                         <label>Pembayaran Setiap</label>
-                        <select class="form-control" id="bayarsetiap" name="Edbayarsetiap">                        
+                        <select class="form-control" id="bayarsetiap" name="Edbayarsetiap">
+                        <option><?php echo $EdtipeKamar['DIBAYAR_SETIAP'];?></option>                        
                          <option>Perhari</option>
                           <option>Minggu</option>
                           <option>Bulan</option>

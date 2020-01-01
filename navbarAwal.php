@@ -59,8 +59,7 @@ add_chatinline(); </script>
                     <a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="false">Login</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="2user/login.php">Pemilik</a>
-                        <a class="dropdown-item" href="3penyewa/login.php">Penyewa</a>
-                        <a class="dropdown-item" href="3penyewa/login.php">Admin</a>                        
+                        <a class="dropdown-item" href="3penyewa/login.php">Penyewa</a>                                                
                     </div>
                 </li>                
                 <li class="nav-item dropdown">

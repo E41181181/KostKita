@@ -133,7 +133,7 @@ if(isset($_SESSION['level'])){
                                 <td><?php echo $detail_perkos['JALAN_KOS'];?></td>
                             </tr><br>
                             <tr>
-                                <td>kecamatan</td>
+                                <td>Kecamatan</td>
                                 <td> :</td>
                                 <td><?php echo $detail_perkos['KEC_KOS'];?></td>
                             </tr><br>

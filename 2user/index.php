@@ -38,17 +38,18 @@ include_once ('header.php');
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner"><?php include_once 'config.php';
-              $result = mysqli_query($koneksi, "SELECT * FROM TB_PEMILIK");
+              $user =$_SESSION['username'];
+              $result = mysqli_query($koneksi, "SELECT * FROM TB_SEWA WHERE ID_PEMILIK='$user' AND STATUS_BAYAR='Terbayar'");
               $countUser = mysqli_num_rows($result);
               ?>
                 <h3><?php echo $countUser; ?></h3>
 
-                <p>User Terdaftar</p>
+                <p>Penyewa kost</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person"></i>
               </div>
-              <a href="../tampiluserpemilik.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="sewaPemilik.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

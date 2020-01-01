@@ -82,13 +82,7 @@ while ($row = mysqli_fetch_array($query))
                         </div></div><a class="dropdown-item" href="2user/logout.php">Logout</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="false">Pusat Bantuan </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="pb1.html">==============</a>
-                        <a class="dropdown-item" href="pb2.html">===========</a> 
-                        <a class="dropdown-item" href="pb3.html">=======</a>  
-                                        </li>                
+                               
                 <li class="nav-item nav-btn">
                     <a class="nav-link btn btn-default btn-default-outline" href="2user/TambahDataKos.php">Tambah Kost Sekarang</a>
                 </li></ul>

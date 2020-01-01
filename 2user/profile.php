@@ -95,7 +95,7 @@ include_once ('config.php');
                             </a>
                             <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
                           </span>
-                          <span class="description">Shared publicly - 7:30 PM today</span>
+                          
                         </div>
                         <!-- /.user-block -->
                         <?php echo 'Jenis Kost  : ';?> <?php echo $dk['JENIS_KOS']; ?></br>
@@ -108,7 +108,7 @@ include_once ('config.php');
                         <?php echo 'Alamat Lengkap :  ';?><?php echo $dk['KET_ALAMAT_KOS']; ?></br>                        
                         <?php echo 'Jumlah Kamar :  ';?><?php echo $dk['JUMLAH_KAMAR']; ?></br>
 
-                        <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
+                       
                       </div>
                       <!-- /.post --><?php } ?>                     
                    </div>
