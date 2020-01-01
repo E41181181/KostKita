@@ -70,14 +70,14 @@ if(isset($_SESSION['level'])){
     </div>
 </section>
 
-<section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="form2-9" data-rv-view="38" style="background-color: rgb(124, 112, 107);">
+<section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="form2-9" data-rv-view="38" style="background-color: rgb(37, 37, 37);">
     
     <div class="mbr-section__container mbr-section__container--sm-padding container" style="padding-top: 27.2px; padding-bottom: 27.2px;">
         <div class="row">
             <div class="col-sm-12">
                 <div class="row">
                         <div class="mbr-header mbr-header--center mbr-header--std-padding">
-                            <h2 class="mbr-header__text">Cari Kost&nbsp;</h2>
+                            <h2 class="mbr-header__text"><font color="white">Cari Kost</font>&nbsp;</h2>
                         </div>                        
  <form action="indexcari.php" method="post" >                            
    <div class="container">
@@ -120,7 +120,9 @@ if(isset($_SESSION['level'])){
                             <font size ="3">Kos <?php echo $perkos['JENIS_KOS'];?><br>
                             <td> Stok Kamar : <?php echo $perkos['STOK_KAMAR'];?></br>
                             <?php echo $perkos['KET_ALAMAT_KOS'];?></br></center>
-                            <p><center><a href="page2 new.php?id=<?php echo $perkos['ID_KAMAR']; ?>" class="btn btn-info">Lihat Lebih Lengkap</a></center></font></p>
+                            <center><a href="cbsewa.php?id=<?php echo $perkos['ID_KAMAR']; ?>" class="btn btn-info">Sewa</a></font> 
+                            <a href="page2 new.php?id=<?php echo $perkos['ID_KAMAR']; ?>" class="btn btn-info">Detail</a></font></center>
+                             
                             
                         </div>
                         
