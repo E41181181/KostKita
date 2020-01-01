@@ -196,9 +196,9 @@ if(isset($_SESSION['level'])){
                         </table>                                                  
                         </div>                         
                     </div>
-                        <a href="cbsewa.php?id=<?php echo $detail_perkos['ID_KAMAR']; ?>" class="btn btn-info">Sewa</a>
-                        <a href="https://api.whatsapp.com/send?phone=<?php echo $detail_perkos['NO_HP_PEMILIK']; ?>"class="btn btn-info" target="_blank">tanya pemilik</a>
-                        <a href="wishlist.php?id=<?php echo $detail_perkos['ID_KOS'];?>" class="btn btn-info">Wishlist</a>
+                        <a href="index.php" class="btn btn-danger">Kembali</a>
+                        <a href="cbsewa.php?id=<?php echo $detail_perkos['ID_KAMAR']; ?>" class="btn btn-success">Sewa</a>
+                        <a href="https://api.whatsapp.com/send?phone=<?php echo $detail_perkos['NO_HP_PEMILIK']; ?>"class="btn btn-info" target="_blank">Tanya Pemilik</a>
                         </div>
                     </div>
 
