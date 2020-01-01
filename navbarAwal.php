@@ -41,7 +41,7 @@ add_chatinline(); </script>
 
             <div class="navbar-brand">
                 <a href="#" class="navbar-logo"><img src="assets/images/logo.png" alt="Mobirise"></a>
-                <a class="text-white" href="#">Ya NgeKost</a>
+                <a class="text-white" href="#">Kost Kita</a>
             </div>
 
             <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">

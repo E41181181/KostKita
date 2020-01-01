@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="assets/mobirise/css/style.css">
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+    <script type="text/javascript">function add_chatinline(){var hccid=46980182;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
+add_chatinline(); </script>
   
   
   
@@ -41,7 +43,7 @@
 
             <div class="navbar-brand">
                 <a href="#" class="navbar-logo"><img src="assets/images/logo.png" alt="Mobirise"></a>
-                <a class="text-white" href="index.php">Ya NgeKost</a>
+                <a class="text-white" href="index.php">Kost Kita</a>
             </div>
 
             <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
@@ -65,16 +67,16 @@ while ($row = mysqli_fetch_array($query))
 ?></a>                                                
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="2user/profile.php">Profil</a>
-                        <a class="dropdown-item" href="2user/infokos.php">Kost Saya</a>
+                        <a class="dropdown-item" href="2user/index.php">Kost Saya</a>
                     <div class="dropdown">
                         <a class="dropdown-item dropdown-toggle" data-toggle="dropdown-submenu" href="#">Lainnya</a>
                         <div class="dropdown-menu dropdown-submenu">
                             <a class="dropdown-item" href="2user/profile.php">Ubah Data Profil</a>
-                            <a class="dropdown-item" href="#">Ubah Data Kost</a>
+                            <a class="dropdown-item" href="2user/infokos.php">Ubah Data Kost</a>
                             <a class="dropdown-item" href="2user/TambahDataKos.php">Tambah Kost</a>
                             <a class="dropdown-item" href="2user/TambahTipeKamar.php">Tambah Tipe Kamar</a>
-                            <a class="dropdown-item" href="#">Atur Kost </a>
-                            <a class="dropdown-item" href="#">--------</a>
+                            <a class="dropdown-item" href="2user/infokos.php">Atur Kost </a>
+                            <a class="dropdown-item" href="2user/sewaPemilik.php">Pembayaran Sewa</a>
                             <a class="dropdown-item" href="#">--------</a>
                             <a class="dropdown-item" href="#">--------</a>
                         </div></div><a class="dropdown-item" href="2user/logout.php">Logout</a>
