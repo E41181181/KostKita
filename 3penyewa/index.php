@@ -34,23 +34,7 @@ include_once ('header.php');
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner"><?php include_once 'config.php';
-              $result = mysqli_query($koneksi, "SELECT * FROM TB_PEMILIK");
-              $countUser = mysqli_num_rows($result);
-              ?>
-                <h3><?php echo $countUser; ?></h3>
-
-                <p>User Terdaftar</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person"></i>
-              </div>
-              <a href="../tampiluserpemilik.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
+          
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
@@ -120,7 +104,7 @@ include_once ('header.php');
 </div>
 <!-- ./wrapper -->
 <?php 
-include_once ('footer.php');
+//include_once ('footer.php');
 ?>
 
 <!-- jQuery -->

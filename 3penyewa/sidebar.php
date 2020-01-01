@@ -41,13 +41,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.php" class="nav-link active">
+                <a href="./index.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Info Kos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="sewaPenyewa.php" class="nav-link active">
+                <a href="sewaPenyewa.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Status Kos Saya</p>
                 </a>
@@ -55,7 +55,7 @@
               
           <li class="nav-item">
             <a href="logout.php" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
+              <i class="far fa-circle nav-icon"></i>
               <p>
                 Logout
                 <span class="badge badge-info right"></span>
@@ -273,8 +273,8 @@
               </li>
 
             </ul>
-          </li>-->
-          <li class="nav-header">EXAMPLES</li>
+          </li>
+          <li class="nav-header">EXAMPLES</li>-->
           
           <!--
           <li class="nav-item">
@@ -374,7 +374,7 @@
                 </a>
               </li>
             </ul>
-          </li> -->
+          </li> 
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-plus-square"></i>
@@ -457,7 +457,7 @@
                 </a>
               </li>
             </ul>
-          </li><!--
+          </li>
           <li class="nav-header">MISCELLANEOUS</li>
           <li class="nav-item">
             <a href="https://adminlte.io/docs/3.0" class="nav-link">

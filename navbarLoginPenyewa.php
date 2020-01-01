@@ -51,8 +51,19 @@ add_chatinline(); </script>
             </button>
 
             <ul class="nav-dropdown collapse pull-xs-right navbar-toggleable-sm nav navbar-nav" id="exCollapsingNavbar">
-                <li class="nav-item"><a class="nav-link link" href="index.php?st=5">Home</a></li>
-                <li class="nav-item dropdown open"><a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="true"><?php echo $_SESSION['username'];?></a>                                                
+                <li class="nav-item"><a class="nav-link link" href="index.php">Home</a></li>
+                <li class="nav-item dropdown open"><a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="true">
+                <?php
+            $nama = "SELECT NAMA_PENYEWA FROM tb_penyewa where ID_PENYEWA = '".$_SESSION['username']."' ";
+          $query = mysqli_query($koneksi, $nama);
+
+if (!$query) {
+	die ('SQL Error: ' . mysqli_error($koneksi));
+}
+while ($row = mysqli_fetch_array($query))
+{  
+    echo $row['NAMA_PENYEWA'];
+}    ?>        </a>                                    
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="3penyewa/profile.php">Profil</a>
                         

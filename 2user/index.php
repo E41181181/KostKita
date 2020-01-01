@@ -120,9 +120,13 @@ include_once ('header.php');
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-<?php 
-include_once ('footer.php');
-?>
+<footer class="main-footer">
+  <div class="float-right d-none d-sm-block">
+    <b>Version</b> 1.0.0
+  </div>
+  <strong>Copyright &copy; 2014-2019 <a href="#">KostKita</a>.</strong> All rights
+  reserved.
+</footer>
 
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
