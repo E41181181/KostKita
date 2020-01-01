@@ -24,7 +24,10 @@ if(isset($_SESSION['level'])){
     
     <div class="mbr-box__magnet mbr-class-mbr-box__magnet--center-left col-sm-6 content-size mbr-section__right" style="background-color: rgb(105, 105, 105);">
     <?php       
-                               $ambil=$koneksi->query("SELECT * FROM tb_datakos INNER JOIN tb_tipekamar ON tb_datakos.ID_KOS = tb_tipekamar.ID_KOS WHERE tb_tipekamar.ID_KAMAR='$_GET[id]'");
+                               $ambil=$koneksi->query("SELECT * FROM tb_datakos 
+                               INNER JOIN tb_tipekamar ON tb_datakos.ID_KOS = tb_tipekamar.ID_KOS 
+                               INNER JOIN tb_pemilik on tb_datakos.ID_PEMILIK =tb_pemilik.ID_PEMILIK
+                               WHERE tb_tipekamar.ID_KAMAR='$_GET[id]'");
                                $detail_perkos= $ambil->fetch_assoc();?>
                                 <!--<pre><?php print_r($detail_perkos); ?></pre>-->
     <p>   </p><p>  </p>     <p></p>
@@ -54,13 +57,13 @@ if(isset($_SESSION['level'])){
 
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mbr-gallery-item">
                     <a href="#lb-gallery1-x" data-slide-to="0" data-toggle="modal">
-                    <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='600px' height='360px' />";?>
+                    <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='500px' height='480px' />";?>
                         <span class="icon glyphicon glyphicon-zoom-in"></span>
                     </a>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mbr-gallery-item">
                     <a href="#lb-gallery1-x" data-slide-to="1" data-toggle="modal">
-                    <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='600px' height='360px' />";?>
+                    <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KAMAR']."' width='500px' height='480px' />";?>
                         <span class="icon glyphicon glyphicon-zoom-in"></span>
                     </a>
                 </div>
@@ -80,9 +83,9 @@ if(isset($_SESSION['level'])){
                     </ol>
                     <div class="carousel-inner">
                         <div class="item active">
-                        <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='600px' height='360px' />";?>
+                        <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='500px' height='450px' />";?>
                         </div><div class="item">
-                        <?php echo "<img src='aset_fot/".$detail_perkos['FOTO_KOS']."' width='600px' height='360px' />";?>
+                        <?php echo "<img src='aset_fot/fototipekamar/".$detail_perkos['FOTO_KAMAR']."' width='500px' height='480px' />";?>
                         </div>
                     </div>
                     <a class="left carousel-control" role="button" data-slide="prev" href="#lb-gallery1-x">
@@ -196,7 +199,7 @@ if(isset($_SESSION['level'])){
                         </div>                         
                     </div>
                         <a href="cbsewa.php?id=<?php echo $detail_perkos['ID_KAMAR']; ?>" class="btn btn-info">Sewa</a>
-                        <a href="tanya_pemilik.php?id=<?php echo $detail_perkos['ID_KOS']; ?>" class="btn btn-info">Tanyak Pemilik</a>
+                        <a href="https://api.whatsapp.com/send?phone=<?php echo $detail_perkos['NO_HP_PEMILIK']; ?>"class="btn btn-info" target="_blank">tanya pemilik</a>
                         <a href="wishlist.php?id=<?php echo $detail_perkos['ID_KOS'];?>" class="btn btn-info">Wishlist</a>
                         </div>
                     </div>

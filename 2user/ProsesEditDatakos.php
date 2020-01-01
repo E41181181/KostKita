@@ -41,9 +41,10 @@ mysqli_query($koneksi,"UPDATE tb_datakos SET
  FOTO_KOS ='$fileName' 
  WHERE tb_datakos.ID_KOS ='$idkost' ");
 //mysqli_query($koneksi,"INSERT INTO tb_datakos VALUES ('$idkost', '$username', '$namakost', '$alamatkostjalan', '$alamatkostkec', '$alamatkostkab', '$alamatkostket', '$jeniskost', '$fasilitaskos', '$fileName', '$jumlahkamar')");
-move_uploaded_file($_FILES['fotokos']['tmp_name'], "../aset_foto/".$_FILES['fotokos']['name']);
+move_uploaded_file($_FILES['fotokos']['tmp_name'], "../aset_fot/".$_FILES['fotokos']['name']);
      echo"<script>alert('Gambar Berhasil diupload !');</script>";
-     header("location:contacts.php");
+     header("location:infokos.php");
+     
     } 
 
 

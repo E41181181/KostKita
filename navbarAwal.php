@@ -27,7 +27,8 @@
     <link rel="stylesheet" href="assets/mobirise/css/style.css">
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
+    <script type="text/javascript">function add_chatinline(){var hccid=46980182;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
+add_chatinline(); </script>
   
   
 </head>
@@ -40,7 +41,7 @@
 
             <div class="navbar-brand">
                 <a href="#" class="navbar-logo"><img src="assets/images/logo.png" alt="Mobirise"></a>
-                <a class="text-white" href="#">Ya NgeKost</a>
+                <a class="text-white" href="#">Kost Kita</a>
             </div>
 
             <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
@@ -58,15 +59,16 @@
                     <a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="false">Login</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="2user/login.php">Pemilik</a>
-                        <a class="dropdown-item" href="3penyewa/login.php">Penyewa</a>                        
+                        <a class="dropdown-item" href="3penyewa/login.php">Penyewa</a>
+                        <a class="dropdown-item" href="3penyewa/login.php">Admin</a>                        
                     </div>
                 </li>                
                 <li class="nav-item dropdown">
                     <a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="false">Pusat Bantuan </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="pb1.html">Bagaimana cara mengiklankan kos ?</a>
-                        <a class="dropdown-item" href="pb2.html">Bagaiamana cara menyewa kos ?</a> 
-                        <a class="dropdown-item" href="pb3.html">Tentang Kami</a>  
+                        <a class="dropdown-item" href="pb1.php">Bagaimana cara mengiklankan kos ?</a>
+                        <a class="dropdown-item" href="pb2.php">Bagaiamana cara menyewa kos ?</a> 
+                        <a class="dropdown-item" href="pb3.php">Tentang Kami</a>  
 
 
                 </li>
