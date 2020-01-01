@@ -38,12 +38,12 @@ function hp($nohp) {
     }
     print $hp;
 }
-hp($nohp);
-
+//hp($nohp);
+//$hp1=hp($nohp);
  
 // menginput data ke database
 //mysqli_query($koneksi,"insert into tabel_pemilik values('$idpemilik','$password','$nama','$alamatjalan','$alamatkec','$alamatkab','$notelp','$email','$fotoktp')");
-mysqli_query($koneksi, "INSERT INTO tb_pemilik VALUES ('$idpemilik', '$password', '$nama_lengkap', '$alamat_jalan', '$alamat_kecamatan','$alamat_kabupaten', '$alamat_ket', '$hp','$email','', '2')");
+mysqli_query($koneksi, "INSERT INTO tb_pemilik VALUES ('$idpemilik', '$password', '$nama_lengkap', '$alamat_jalan', '$alamat_kecamatan','$alamat_kabupaten', '$alamat_ket', '$nohp','$email','', '2')");
 // mengalihkan halaman kembali ke index.php
 header("location:index.php");
  

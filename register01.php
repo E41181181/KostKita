@@ -55,10 +55,10 @@
                                 <input type="text" class="form-control" name="alamatkab" placeholder="Alamat (Kabupaten) ">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="alamatket" placeholder="Alamat (Kabupaten) ">
+                                <input type="text" class="form-control" name="alamatket" placeholder="Alamat Lengkap">
                             </div>
                             <div class="form-group">
-                                <input type="tel" class="form-control" name="notelp" placeholder="No telp (+62)" required>
+                                <input type="tel" class="form-control" name="notelp" placeholder="No telp" required>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="email" placeholder="Email" >

@@ -14,7 +14,7 @@ $alamat_ket = $_POST['alamatket'];
 $email = $_POST['email'];
 
 
-$nohp = $_POST['notelp'];
+$nohp = $_POST['nohp'];
 function hp($nohp) {
     // kadang ada penulisan no hp 0811 239 345
     $nohp = str_replace(" ","",$nohp);
@@ -33,16 +33,17 @@ function hp($nohp) {
         }
         // cek apakah no hp karakter 1 adalah 0
         elseif(substr(trim($nohp), 0, 1)=='0'){
-            $hp = '+62'.substr(trim($nohp), 1);
+            $hp= '+62'.substr(trim($nohp), 1);
         }
     }
-    print $hp;
+   print $hp;
 }
-hp($nohp);
-
+$hp1=hp($nohp);
+//$hp2= hp($nohp);
+//echo $hp1;
 // menginput data ke database
 //mysqli_query($koneksi,"insert into tabel_pemilik values('$idpemilik','$password','$nama','$alamatjalan','$alamatkec','$alamatkab','$notelp','$email','$fotoktp')");
-mysqli_query($koneksi, "INSERT INTO tb_penyewa VALUES ('$idpemilik', '$password', '$nama_lengkap', '', '', '$hp', '$alamat_jalan', '$alamat_kecamatan','$alamat_kabupaten', '$alamat_ket', '$email', '', '3')");
+mysqli_query($koneksi, "INSERT INTO tb_penyewa VALUES ('$idpemilik', '$password', '$nama_lengkap', '', '', '$nohp', '$alamat_jalan', '$alamat_kecamatan','$alamat_kabupaten', '$alamat_ket', '$email', '', '3')");
 // mengalihkan halaman kembali ke index.php
 header("location:index.php");
 ?>

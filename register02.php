@@ -37,13 +37,13 @@
                         <form method="post" action="tambah_user2.php">
                             <input type="hidden" value="jQCgYeJ824odq/haU/Kyc/Pz2lntCtNbGH9/HVU/oytjPNL0b3iYN4PT/yBMQRLV5mKFwfvUuikKt93gPNDP5yc+GZh8vchoit6Veh4uFnR2WuL2yeHN0Vkjh7NbcXk/" data-form-email="false">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="idpenyewa" placeholder="Username" >
+                                <input type="text" class="form-control" name="idpenyewa" placeholder="Username (Tidak Menggunakan simbol maupun spasi)" required>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password" placeholder="Password" >
+                                <input type="password" class="form-control" name="password" placeholder="Password" required>
                             </div>                            
                             <div class="form-group">
-                                <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap">
+                                <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap"required>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="alamatjalan" placeholder="Alamat (Jalan)" >
@@ -58,10 +58,10 @@
                                 <input type="text" class="form-control" name="alamatket" placeholder="Alamat Lengkap ">
                             </div>
                             <div class="form-group">
-                                <input type="number" class="form-control" name="notelp" placeholder="No. Telp" >
+                                <input type="number" class="form-control" name="nohp" placeholder="No. Telp" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="email" placeholder="Email" >
+                                <input type="text" class="form-control" name="email" placeholder="Email" required >
                             </div>                            
                                                         
                             <div class="mbr-buttons mbr-buttons--right"><button type="submit" class="mbr-buttons__btn btn btn-lg btn-danger">Submit</button></div>
