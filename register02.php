@@ -12,7 +12,7 @@
   <title>Register</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700,400&subset=cyrillic,latin,greek,vietnamese">
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/mobirise/css/style.css">
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   
@@ -28,16 +28,16 @@
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2" data-form-type="formoid">
                         <div class="mbr-header mbr-header--center mbr-header--std-padding">
-                            <h2 class="mbr-header__text"><b><font color="White">DAFTAR PENYEWA</font></b></h2>
+                            <h2 class="mbr-header__text">REGISTER PENYEWA KOST</h2>
                         </div>
-                        <div data-form-alert="false">
-                            <div class="hide" data-form-alert-success="true">Daftar Berhasil                                
-                            </div>
+                        <div data-form-alert="true">
+                            <div class="hide" data-form-alert-success="true">Daftar Berhasil
+</div>
                         </div>
-                        <form method="post" action="tambah_user.php">
+                        <form method="post" action="tambah_user2.php">
                             <input type="hidden" value="jQCgYeJ824odq/haU/Kyc/Pz2lntCtNbGH9/HVU/oytjPNL0b3iYN4PT/yBMQRLV5mKFwfvUuikKt93gPNDP5yc+GZh8vchoit6Veh4uFnR2WuL2yeHN0Vkjh7NbcXk/" data-form-email="false">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="idpemilik" placeholder="Username" >
+                                <input type="text" class="form-control" name="idpenyewa" placeholder="Username" >
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control" name="password" placeholder="Password" >
@@ -55,7 +55,7 @@
                                 <input type="text" class="form-control" name="alamatkab" placeholder="Alamat (Kabupaten) ">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="alamatket" placeholder="Alamat (Kabupaten) ">
+                                <input type="text" class="form-control" name="alamatket" placeholder="Alamat Lengkap ">
                             </div>
                             <div class="form-group">
                                 <input type="number" class="form-control" name="notelp" placeholder="No. Telp" >
@@ -111,12 +111,12 @@ Phone: 081333693785<br><br></p><p></p>
 </footer>
 
 
-  <!-- <script src="assets/web/assets/jquery/jquery.min.js"></script> -->
+  <!--<script src="assets/web/assets/jquery/jquery.min.js"></script>-->
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/smooth-scroll/smooth-scroll.js"></script>
- 
-    <!-- <script src="assets/jquery-placeholder/jquery.placeholder.min.js"></script> -->
- 
+  <!--[if lte IE 9]>
+    <script src="assets/jquery-placeholder/jquery.placeholder.min.js"></script>
+  <![endif]-->
   <script src="assets/jarallax/jarallax.js"></script>
   <script src="assets/mobirise/js/script.js"></script>
   <script src="assets/formoid/formoid.min.js"></script>
