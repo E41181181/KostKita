@@ -13,8 +13,6 @@ if(isset($_SESSION['level'])){
 }else include 'navbarAwal.php';
 
 
-  
-
 ?>
 
 
@@ -124,7 +122,7 @@ if(isset($_SESSION['level'])){
                         <div class="mbr-article mbr-article--auto-align mbr-article--wysiwyg">
                             <!--ISIAN-->
                             <font color="white">  
-                            <tr>	
+                            <tr>    
                                 <td>Jalan</td>
                                 <td> :</td>
                                 <td><?php echo $detail_perkos['JALAN_KOS'];?></td>
