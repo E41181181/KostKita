@@ -42,7 +42,7 @@ include_once ('config.php');
 
     <!-- Main content -->
     <section class="content">
-    <?php $datakos = mysqli_query($koneksi,"SELECT * FROM tb_datakos where id_pemilik = '".$_SESSION['username']."' ");
+    <?php $datakos = mysqli_query($koneksi,"SELECT * FROM tb_datakos INNER JOIN tb_tipekamar ON tb_datakos.ID_KOS = tb_tipekamar.ID_KOS where id_pemilik = '".$_SESSION['username']."' ");
 		                  while($dk = mysqli_fetch_array($datakos)){
 			                ?>
       <!-- Default box -->
@@ -60,11 +60,9 @@ include_once ('config.php');
                       <ul class="ml-4 mb-0 fa-ul text-muted">
                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> <?php echo $dk['KET_ALAMAT_KOS']; ?></li>
                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-user"></i></span><?php echo $dk['JENIS_KOS']; ?></li>
+                        <li >Harga Rp: <?php echo number_format($dk['HARGA']); ?></li>
                       </ul>
-                    </div>
-                    <div class="col-5 text-center">
-                      <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
-                    </div>
+                    </div>                    
                   </div>
                 </div>
                 
