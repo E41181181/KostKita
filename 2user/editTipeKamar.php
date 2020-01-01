@@ -61,8 +61,8 @@ include_once ('config.php');
                         
                     <div class="form-group">
                         <label>Ukuran Kamar</label>                        
-                        <select class="form-control" id="ukurankamar" name="Edukurankamar">
-                        <option>Pilih Ukuran Kamar</option>
+                        <select class="form-control" id="ukurankamar" name="Edukurankamar" value="<?php echo $EdtipeKamar['UKURAN_KAMAR'];?>" >
+                        <option><?php echo $EdtipeKamar['UKURAN_KAMAR'];?></option>
                           <option>2 X 2</option>
                           <option>2 X 3</option>
                           <option>3 X 2</option>
@@ -89,14 +89,15 @@ include_once ('config.php');
                         <div class="form-group">
                         <label>Status Kamar</label>                        
                         <select class="form-control" id="stkamar" name="stkamar">
-                        <option>Pilih Status Kamar</option>
+                        <option><?php echo $EdtipeKamar['STATUS_KAMAR'];?></option>
                           <option>Tersedia</option>
                           <option>Tidak Tersedia</option>                                                   
                         </select></div>
                         <p></p>
                         <div class="form-group">
                         <label>Pembayaran Setiap</label>
-                        <select class="form-control" id="bayarsetiap" name="Edbayarsetiap">                        
+                        <select class="form-control" id="bayarsetiap" name="Edbayarsetiap">
+                        <option><?php echo $EdtipeKamar['DIBAYAR_SETIAP'];?></option>                        
                          <option>Perhari</option>
                           <option>Minggu</option>
                           <option>Bulan</option>

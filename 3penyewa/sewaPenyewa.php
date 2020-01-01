@@ -11,12 +11,12 @@ include_once ('header.php');
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Penyewa Kost</h1>
+            <h1>Kost Saya</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Penyewa Kost</li>
+              <li class="breadcrumb-item active">Kost Saya</li>
             </ol>
           </div>
         </div>
@@ -33,20 +33,18 @@ include_once ('header.php');
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-            <a href="refresh.php">
-      <button type="submit" class="btn btn-primary">Refresh</button></a>
+            Untuk melakukan <b>pembayaran</b> dapat langsung menghubungi pemilik kos melalui No Hp atau Email yang tersedia.
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Nama Kost </th>                                     
-                  <th>Nama Penyewa</th>
-                  <th>No Penyewa</th>                  
-                  <th>Harga Kamar </th>
-                  <th>Jatuh Tempo</th>
-                  <th>Status </th>
-                  <th colspan="2"><center>Pembayaran</center></th>
-                  
-                  
+                  <th>Nama Kos </th>                                     
+                  <th>Nama Pemilik</th>
+                  <th>No Pemilik</th>                  
+                  <th>Harga</th>
+                  <th>Status</th>
+                  <th>Tanggal Sewa</th>
+                  <th>Deadline Pembayaran</th>
+                  <th>Detail</th>                  
                 </tr>
                 </thead>
 <?php
@@ -57,7 +55,7 @@ $sql = "SELECT * FROM tb_sewa INNER JOIN tb_datakos on tb_sewa.ID_KOS = tb_datak
 INNER JOIN tb_pemilik ON tb_sewa.ID_PEMILIK = tb_pemilik.ID_PEMILIK 
 INNER JOIN tb_penyewa ON tb_sewa.ID_PENYEWA = tb_penyewa.ID_PENYEWA
 INNER JOIN tb_tipekamar on tb_sewa.ID_KAMAR = tb_tipekamar.ID_KAMAR
-WHERE tb_sewa.ID_PEMILIK = '".$_SESSION['username']."' ";
+WHERE tb_sewa.ID_PENYEWA = '".$_SESSION['username']."' ";
 		
 $query = mysqli_query($koneksi, $sql);
 
@@ -71,22 +69,15 @@ while ($row = mysqli_fetch_array($query))
 echo'
                 <tbody>
                 <tr>
-                  <td>'.$row['NAMA_KOS'].'</td>
-                  <td>'.$row['NAMA_PENYEWA'].'</td>   
-                  <td>'.$row['NO_HP_PENYEWA'].'</td>                  
+                  <td>'.$row['NAMA_KOS'].'</td>                                    
+                  <td>'.$row['NAMA_PEMILIK'].'</td>
+                  <td>'.$row['NO_HP_PEMILIK'].'</td>                  
                   <td>Rp. '.$row['HARGA'].'</td>
-                  <td>'.$row['TANGGAL_JATUH_TEMPO'].'</td>
-                  <td>'.$row['STATUS_BAYAR'].'</td>                  
+                  <td>'.$row['STATUS_BAYAR'].'</td>
+                  <td>'.$row['TANGGAL_BAYAR'].'</td>
+                  <td>'.$row['TANGGAL_JATUH_TEMPO'].'</td>                  
+                  <td><a href="detailSewakos.php?id='.$row['ID_SEWA'].'">Detail</a></td>
                   
-                  <td><select class="form-control" id="navigation" onChange="window.document.location.href=this.options[this.selectedIndex].value;">
-                  <option>Pembayaran Penyewa</option>
-                    <option value="Setstatusbayar.php?id='.$row['ID_SEWA'].'">Terbayar</option>
-                    <option value="Setstatusbayar2.php?id='.$row['ID_SEWA'].'">Belum Membayar</option>
-                    <option value="Setstatusbayar3.php?id='.$row['ID_SEWA'].'">Telah DP</option>
-                    <option value="Setstatusbayar4.php?id='.$row['ID_SEWA'].'">Penyewa Membatalkan</option>                          
-                  </select></td>
-                  
-
                 </tr> ';
               }
 

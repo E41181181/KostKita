@@ -94,13 +94,7 @@ $logout="Logout Berhasil";
         </div>
       </form>
 
-      <div class="social-auth-links text-center mb-3">
-        <p>- atau -</p>
-        <a href="eror.html" class="btn btn-block btn-primary" >
-          <i class="fab fa-facebook mr-2"></i> Login degan Facebook
-        </a>
-        
-      </div>
+      
       <!-- /.social-auth-links -->
 
       

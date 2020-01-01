@@ -1,3 +1,15 @@
+<?php 
+
+include 'config.php';
+
+            
+          session_start();
+          if($_SESSION['status']!="login"){
+            header("location:3penyewa/login.php?pesan=belum_login");
+          }
+            
+
+?>
 <!DOCTYPE html>
 <html  >
 <head>
@@ -9,7 +21,7 @@
   <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
   <meta name="description" content="Site Builder Description">
   
-  <title>Register</title>
+  <title>Sewa</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700,400&subset=cyrillic,latin,greek,vietnamese">
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -26,45 +38,76 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="row">
+                <?php		
+                                $ambil=$koneksi->query("SELECT * FROM tb_datakos INNER JOIN tb_tipekamar ON tb_datakos.ID_KOS = tb_tipekamar.ID_KOS INNER JOIN tb_pemilik on tb_datakos.ID_PEMILIK = tb_pemilik.ID_PEMILIK WHERE tb_tipekamar.ID_KAMAR='$_GET[id]'");
+                               $detail_perkos= $ambil->fetch_assoc();?>
+                                <!--<pre><?php print_r($detail_perkos); ?></pre>-->
                     <div class="col-sm-8 col-sm-offset-2" data-form-type="formoid">
                         <div class="mbr-header mbr-header--center mbr-header--std-padding">
-                            <h2 class="mbr-header__text">REGISTER PEMILIK KOST</h2>
+                            <h2 class="mbr-header__text">SEWA</h2>
                         </div>
                         <div data-form-alert="false">
-                            <div class="hide" data-form-alert-success="true">Daftar Berhasil                                
+                            <div class="hide" data-form-alert-success="true">Sewa Berhasil
+                                                               
                             </div>
                         </div>
-                        <form method="post" action="tambah_user.php">
+                        <form method="post" action="pcsewa.php">
                             <input type="hidden" value="jQCgYeJ824odq/haU/Kyc/Pz2lntCtNbGH9/HVU/oytjPNL0b3iYN4PT/yBMQRLV5mKFwfvUuikKt93gPNDP5yc+GZh8vchoit6Veh4uFnR2WuL2yeHN0Vkjh7NbcXk/" data-form-email="false">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="idpemilik" placeholder="Username(Tidak Menggunakan Spasi/simbol simbol)" >
+                                <input type="hidden" class="form-control" name="idsewa" >
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password" placeholder="Password" >
+                                <input type="hidden" class="form-control" name="idkos"  value="<?php echo $detail_perkos['ID_KOS'];?>">
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" name="idkamar"  value="<?php echo $detail_perkos['ID_KAMAR'];?>">
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" name="idpemilik" value="<?php echo $detail_perkos['ID_PEMILIK'];?>">
+                            </div>
+                            <div class="form-group">
+                            <label>Penyewa</label>
+                                <input type="text" class="form-control" name="idpenyewatampil" disabled value="<?php echo $_SESSION['username'];?>">
+                                <input type="hidden" class="form-control" name="idpenyewa"  value="<?php echo $_SESSION['username'];?>">
                             </div>                            
                             <div class="form-group">
-                                <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap">
+                                <label>Nama Kos</label>
+                                <input type="text" class="form-control" name="Nama Kost"  disabled value="<?php echo $detail_perkos['NAMA_KOS'];?>">
+                            </div>
+                            <div>
+                            <label><h3>ALAMAT</h3></label>                            
+                            <div class="form-group">
+                                <label>Jalan</label>
+                                <input type="text" class="form-control" name="alamatjalan" disabled value="<?php echo $detail_perkos['JALAN_KOS'];?>">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="alamatjalan" placeholder="Alamat (Jalan)" >
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="alamatkec" placeholder="Alamat (Kecamatan)">
+                            <label>Kecamatan</label>
+                                <input type="text" class="form-control" name="alamatkec" disabled value="<?php echo $detail_perkos['KEC_KOS'];?>">
                             </div>                            
                             <div class="form-group">
-                                <input type="text" class="form-control" name="alamatkab" placeholder="Alamat (Kabupaten) ">
+                            <label>Kabupaten</label>
+                                <input type="text" class="form-control" name="alamatkab" disabled value="<?php echo $detail_perkos['KAB_KOS'];?>">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="alamatket" placeholder="Alamat (Kabupaten) ">
+                            <label>Alamat Lengkap</label>
+                                <input type="text" class="form-control" name="alamatket" disabled value="<?php echo $detail_perkos['KET_ALAMAT_KOS'];?>">
+                            </div>
                             </div>
                             <div class="form-group">
-                                <input type="tel" class="form-control" name="notelp" placeholder="No telp (+62)" required>
+                            <label>Nama Pemilik</label>
+                                <input type="hidden" class="form-control" name="nohp" disabled value="<?php echo $detail_perkos['NO_HP_PEMILIK'];?>">
+                                <input type="text" class="form-control" name="namapemelik" disabled value="<?php echo $detail_perkos['NAMA_PEMILIK'];?>">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="email" placeholder="Email" >
-                            </div>                            
-                                                        
-                            <div class="mbr-buttons mbr-buttons--right"><button type="submit" class="mbr-buttons__btn btn btn-lg btn-danger">Submit</button></div>
+                            <label>Harga</label>
+                                <input type="text" class="form-control" name="alamatket" disabled value="<?php echo "Rp. " ; ?><?php echo $detail_perkos['HARGA'];?>">
+                            </div>
+                                                                                 
+                            <div class="mbr-buttons mbr-buttons--right">                                
+                                <button type="submit"  class="mbr-buttons__btn btn btn-lg btn-danger" >Lanjutkan</button>
+                                <a href="index.php" class="mbr-buttons__btn btn btn-lg btn-danger">Batal</a>
+                            </div>
+                            
                         </form>
                     </div>
                 </div>

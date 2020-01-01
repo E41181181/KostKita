@@ -38,23 +38,23 @@ include_once ('config.php');
                     <img class="profile-user-img img-fluid img-circle" src="../../dist/img/user4-128x128.jpg"
                       alt="User profile picture">
                   </div>
-                  <?php $data = mysqli_query($koneksi,"SELECT nama_pemilik, no_hp_pemilik, email_pemilik, ket_alamat_pemilik FROM tb_pemilik where id_pemilik = '".$_SESSION['username']."' ");
+                  <?php $data = mysqli_query($koneksi,"SELECT * FROM tb_penyewa where id_penyewa = '".$_SESSION['username']."' ");
 		while($d = mysqli_fetch_array($data)){
 			?>
-                  <h3 class="profile-username text-center"><?php echo $d['nama_pemilik']; ?></h3> 
+                  <h3 class="profile-username text-center"><?php echo $d['NAMA_PENYEWA']; ?></h3> 
                               
 
-                  <p class="text-muted text-center">Pemilik Kost</p>
+                  <p class="text-muted text-center">PENYEWA Kost</p>
 
                   <ul class="list-group list-group-unbordered mb-3">
                     <li class="list-group-item">
-                      <b>No HP</b> <a class="float-right"><?php echo $d['no_hp_pemilik']; ?></a>
+                      <b>No HP</b> <a class="float-right"><?php echo $d['NO_HP_PENYEWA']; ?></a>
                     </li>
                     <li class="list-group-item">
-                      <b>Email</b> <a class="float-right"><?php echo $d['email_pemilik']; ?></a>
+                      <b>Email</b> <a class="float-right"><?php echo $d['EMAIL_PENYEWA']; ?></a>
                     </li>
                     <li class="list-group-item">
-                      <b>Alamat</b> <a class="float-right"><?php echo $d['ket_alamat_pemilik']; ?></a>
+                      <b>Alamat</b> <a class="float-right"><?php echo $d['KET_ALAMAT_PENYEWA']; ?></a>
                     </li>
                   </ul>
                   <?php            }?>
@@ -71,101 +71,64 @@ include_once ('config.php');
             <div class="col-md-9">
               <div class="card">
                 <div class="card-header p-2">
-                  <ul class="nav nav-pills">
-                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Kost Saya</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Info</a></li>
+                  <ul class="nav nav-pills">                  
+                    
                     <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Edit Data User</a></li>
                   </ul>
                 </div><!-- /.card-header -->
                 <div class="card-body">
                   <div class="tab-content">
-                    <div class="active tab-pane" id="activity">
-                      <!-- Post -->
-                      <?php $datakos = mysqli_query($koneksi,"SELECT * FROM tb_datakos where id_pemilik = '".$_SESSION['username']."' ");
-		                  while($dk = mysqli_fetch_array($datakos)){
-			                ?>
-                      <div class="post">
-                        <div class="user-block">
-                          <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg"
-                            alt="user image">
-                          <span class="username">
-                            <a href="#">
-                            <?php echo $dk['NAMA_KOS']; ?>
-                            </a>
-                            <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                          </span>
-                          
-                        </div>
-                        <!-- /.user-block -->
-                        <?php echo 'Jenis Kost  : ';?> <?php echo $dk['JENIS_KOS']; ?></br>
-                        <?php echo 'Fasilitas Kost : ';?><?php echo $dk['FASILITAS_KOS']; ?></br>
-                        </br>
-                        <?php echo 'Alamat Kost';?></br>
-                        <?php echo 'Jalan : ';?><?php echo $dk['JALAN_KOS']; ?></br>
-                        <?php echo 'Kecamatan : ';?><?php echo $dk['KEC_KOS']; ?></br>
-                        <?php echo 'Kabupaten : ';?><?php echo $dk['KAB_KOS']; ?></br>
-                        <?php echo 'Alamat Lengkap :  ';?><?php echo $dk['KET_ALAMAT_KOS']; ?></br>                        
-                        <?php echo 'Jumlah Kamar :  ';?><?php echo $dk['JUMLAH_KAMAR']; ?></br>
-
-                       
-                      </div>
-                      <!-- /.post --><?php } ?>                     
-                   </div>
+                    
                     <!-- /.tab-pane -->
-                    <div class="tab-pane" id="timeline">
-                    
-                          
-                    
-                     </div>
+                   
                     <!-- /.tab-pane -->
 
                     <div class="tab-pane" id="settings">
                     <?php 
-                    $datapemilik = mysqli_query($koneksi,"SELECT NAMA_PEMILIK, NO_HP_PEMILIK, EMAIL_PEMILIK, JALAN_PEMILIK, KEC_PEMILIK, KAB_PEMILIK, KET_ALAMAT_PEMILIK FROM tb_pemilik WHERE ID_PEMILIK='".$_SESSION['username']."' ");
-                    while($c = mysqli_fetch_array($datapemilik)){
+                    $datapenyewa = mysqli_query($koneksi,"SELECT NAMA_PENYEWA, NO_HP_PENYEWA, EMAIL_PENYEWA, JALAN_PENYEWA, KEC_PENYEWA, KAB_PENYEWA, KET_ALAMAT_PENYEWA FROM tb_penyewa WHERE ID_PENYEWA='".$_SESSION['username']."' ");
+                    while($c = mysqli_fetch_array($datapenyewa)){
                     ?>
-                      <form class="form-horizontal" action="editdatapemilik.php" method="POST">
+                      <form class="form-horizontal" action="editdatapenyewa.php" method="POST">
                         <div class="form-group row">
                           <label for="inputName" class="col-sm-2 col-form-label">Nama </label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputName" name="Ednama" value="<?php echo $c['NAMA_PEMILIK']; ?>">
+                            <input type="text" class="form-control" id="inputName" name="Ednama" value="<?php echo $c['NAMA_PENYEWA']; ?>">
                           </div>
                         </div>
                         <div class="form-group row">
                           <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                           <div class="col-sm-10">
-                            <input type="email" class="form-control" id="inputEmail" name="Edemail" value="<?php echo $c['EMAIL_PEMILIK']; ?>" placeholder="Email">
+                            <input type="email" class="form-control" id="inputEmail" name="Edemail" value="<?php echo $c['EMAIL_PENYEWA']; ?>" placeholder="Email">
                           </div>
                         </div>
                         <div class="form-group row">
                           <label for="inputName2" class="col-sm-2 col-form-label">No Telp</label>
                           <div class="col-sm-10">
-                            <input type="number" class="form-control" id="inputName2" name="Ednohp" value="<?php echo $c['NO_HP_PEMILIK']; ?>" placeholder="No Telepon Baru">
+                            <input type="number" class="form-control" id="inputName2" name="Ednohp" value="<?php echo $c['NO_HP_PENYEWA']; ?>" placeholder="No Telepon Baru">
                           </div>
                         </div>
                         <div class="form-group row">
                           <label for="inputSkills" class="col-sm-2 col-form-label">Alamat Jalan</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputSkills" name="Edjal" value="<?php echo $c['JALAN_PEMILIK']; ?>" placeholder="Alamat(Jalan)">
+                            <input type="text" class="form-control" id="inputSkills" name="Edjal" value="<?php echo $c['JALAN_PENYEWA']; ?>" placeholder="Alamat(Jalan)">
                           </div>
                         </div>
                         <div class="form-group row">
                           <label for="inputSkills" class="col-sm-2 col-form-label">Kecamatan</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputSkills" name="Edkec" value="<?php echo $c['KEC_PEMILIK']; ?>" placeholder="Alamat(Kecamatan)">
+                            <input type="text" class="form-control" id="inputSkills" name="Edkec" value="<?php echo $c['KEC_PENYEWA']; ?>" placeholder="Alamat(Kecamatan)">
                           </div>
                         </div>
                         <div class="form-group row">
                           <label for="inputSkills" class="col-sm-2 col-form-label">Kabupaten</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputSkills" name="Edkab" value="<?php echo $c['KAB_PEMILIK']; ?>" placeholder="Alamat(Kabupaten)">
+                            <input type="text" class="form-control" id="inputSkills" name="Edkab" value="<?php echo $c['KAB_PENYEWA']; ?>" placeholder="Alamat(Kabupaten)">
                           </div>
                         </div>
                         <div class="form-group row">
                           <label for="inputExperience" class="col-sm-2 col-form-label">Alamat Lengkap</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputExperience" name="Edalamat" value="<?php echo $c['KET_ALAMAT_PEMILIK']; ?>"></input>
+                            <input type="text" class="form-control" id="inputExperience" name="Edalamat" value="<?php echo $c['KET_ALAMAT_PENYEWA']; ?>"></input>
                           </div>
                         </div>
                         <div class="form-group row">

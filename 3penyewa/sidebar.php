@@ -17,23 +17,12 @@
         <div class="info">
           <a href="profile.php" class="d-block">
             <?php
-            include 'config.php';
             
           session_start();
           if($_SESSION['status']!="login"){
             header("location:login.php?pesan=belum_login");
           }
-          $nama = "SELECT NAMA_PEMILIK FROM tb_pemilik where ID_PEMILIK = '".$_SESSION['username']."' ";
-          $query = mysqli_query($koneksi, $nama);
-
-if (!$query) {
-	die ('SQL Error: ' . mysqli_error($koneksi));
-}
-while ($row = mysqli_fetch_array($query))
-{  
-  echo $row['NAMA_PEMILIK'];
-}
-?> </a>
+          echo $_SESSION['username'];  ?></a>
         </div>
       </div>
 
@@ -58,36 +47,15 @@ while ($row = mysqli_fetch_array($query))
                 </a>
               </li>
               <li class="nav-item">
-                <a href="TambahDataKos.php" class="nav-link">
+                <a href="sewaPenyewa.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Tambah Kost</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="TambahTipekamar.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tambah Tipe kamar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="sewaPemilik.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Penyewa Kost</p>
+                  <p>Status Kos Saya</p>
                 </a>
               </li>
               
           <li class="nav-item">
-            <a href="infokos.php" class="nav-link">
-              <i class="nav-icon far fa-circle nav-icon"></i>
-              <p>
-                Kost 
-                <span class="badge badge-info right"></span>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="logout.php" class="nav-link">
-              <i class="nav-icon far fa-circle"></i>
+              <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Logout
                 <span class="badge badge-info right"></span>
@@ -306,9 +274,9 @@ while ($row = mysqli_fetch_array($query))
 
             </ul>
           </li>-->
-          <!--<li class="nav-header">EXAMPLES</li>
+          <li class="nav-header">EXAMPLES</li>
           
-          
+          <!--
           <li class="nav-item">
             <a href="pages/gallery.html" class="nav-link">
               <i class="nav-icon far fa-image"></i>
@@ -406,7 +374,7 @@ while ($row = mysqli_fetch_array($query))
                 </a>
               </li>
             </ul>
-          </li> 
+          </li> -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-plus-square"></i>
@@ -489,7 +457,7 @@ while ($row = mysqli_fetch_array($query))
                 </a>
               </li>
             </ul>
-          </li>
+          </li><!--
           <li class="nav-header">MISCELLANEOUS</li>
           <li class="nav-item">
             <a href="https://adminlte.io/docs/3.0" class="nav-link">
